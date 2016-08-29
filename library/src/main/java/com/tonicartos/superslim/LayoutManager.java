@@ -398,6 +398,19 @@ public class LayoutManager extends RecyclerView.LayoutManager {
         requestLayout();
     }
 
+    public void scrollToPositionWithOffset(int position, int offset) {
+        if (position < 0 || getItemCount() <= position) {
+            Log.e("SuperSLiM.LayoutManager", "Ignored scroll to " + position +
+                    " as it is not within the item range 0 - " + getItemCount());
+            return;
+        }
+
+        mRequestPosition = position;
+        mRequestPositionOffset = offset;
+
+        requestLayout();
+    }
+
     @Override
     public void smoothScrollToPosition(final RecyclerView recyclerView, RecyclerView.State state,
             final int position) {
