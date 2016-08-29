@@ -1,6 +1,16 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4'
+    }
+}
+
 apply plugin: 'com.android.library'
 apply plugin: 'bintray-release'
 apply plugin: 'jacoco'
+apply plugin: 'com.github.dcendents.android-maven'
 
 android {
     compileSdkVersion 21
